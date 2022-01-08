@@ -3,10 +3,10 @@
     "Language" "english"
     "Tokens"
     {
-        "PL_jugg" "Juggernaut"
-        "PL_jugg_lobby" "Juggernaut Lobby"
-        "PL_jugg_desc" "6 Pilots vs 1 Juggernaut Titan. Kill the titan to win"
-        "PL_jugg_abbr" "JUGG"
+        "PL_juggernaut" "Juggernaut"
+        "PL_juggernaut_lobby" "Juggernaut Lobby"
+        "PL_juggernaut_desc" "6 Pilots vs 1 Juggernaut Titan. Kill the titan to win"
+        "PL_juggernaut_abbr" "JUGG"
         "GAMEMODE_JUGG" "Juggernaut"
     }
 }

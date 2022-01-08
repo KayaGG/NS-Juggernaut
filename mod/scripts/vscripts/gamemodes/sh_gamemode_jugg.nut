@@ -1,6 +1,6 @@
 global function Sh_GamemodeJugg_Init;
 
-global const string GAMEMODE_JUGG = "jugg"
+global const string GAMEMODE_JUGG = "juggernaut"
 
 void function Sh_GamemodeJugg_Init()
 {
