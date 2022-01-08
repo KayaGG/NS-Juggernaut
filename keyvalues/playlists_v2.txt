@@ -1,0 +1,77 @@
+playlists
+{
+    Gamemodes
+    {
+        juggernaut
+		{
+			inherit defaults
+			vars
+			{
+				name #PL_juggernaut
+				lobbytitle #PL_juggernaut_lobby
+				description #PL_juggernaut_desc
+				hint #PL_juggernaut_hint
+				abbreviation #PL_juggernaut_abbr
+
+				max_players 16
+				max_teams 2
+				classic_mp 1
+				scorelimit 5
+				timelimit 2
+				roundtimelimit 2
+				roundscorelimit 5
+
+				gamemode_score_hint #GAMEMODE_SCORE_HINT_TDM
+			}
+		}
+    }
+    Playlists
+    {
+        juggernaut
+		{
+			inherit defaults
+			vars
+			{
+				name #PL_juggernaut
+				lobbytitle #PL_juggernaut_lobby
+				description #PL_juggernaut_desc
+				hint #PL_juggernaut_hint
+				abbreviation #PL_juggernaut_abbr
+				image ffa
+				max_players 16
+				max_teams 2
+				classic_mp 1
+				scorelimit 5
+				roundtimelimit 2.6
+				roundscorelimit 5
+
+				gamemode_score_hint #GAMEMODE_SCORE_HINT_TDM
+			}
+
+			gamemodes
+			{
+				juggernaut
+				{
+					maps
+					{
+					//do some adjustments here lol
+					    mp_forwardbase_kodai 1
+                        mp_grave 1
+                        mp_homestead 1
+                        mp_thaw 1
+                        mp_black_water_canal 1
+                        mp_eden 1
+                        mp_drydock 1
+                        mp_crashsite3 1
+                        mp_complex3 1
+                        mp_angel_city 1
+                        mp_colony02 1
+                        mp_glitch 1
+						mp_relic02 1
+						mp_wargames 1
+						mp_rise 1
+					}
+				}
+			}
+    }
+}
