@@ -22,7 +22,7 @@
         },
         {
             "Path": "gamemodes/cl_gamemode_jugg.nut",
-            "RunOn": "SERVER && MP"
+            "RunOn": "CLIENT && MP"
         }
     ],
     "Localisation": [
