@@ -12,7 +12,7 @@ void function GamemodeJugg_Init()
 	SetRoundBased( false )
 	SetRespawnsEnabled( false )
 	Riff_ForceSetEliminationMode( eEliminationMode.PilotsTitans )
-	Riff_ForceSetSpawnAsTitan( eSpawnAsTitan.Always ) //remove this
+	//Riff_ForceSetSpawnAsTitan( eSpawnAsTitan.Always ) //remove this
 	SetShouldUseRoundWinningKillReplay( true )
 	SetRoundWinningKillReplayKillClasses( true, false ) // only track pilot->titan kills
 	ScoreEvent_SetupEarnMeterValuesForTitanModes()
@@ -29,23 +29,37 @@ void function GamemodeJugg_Init()
 	ClassicMP_ForceDisableEpilogue( true )
 	//AddCallback_GameStateEnter( eGameState.Playing, WaitForThirtySecondsLeft )
 
-
-	InitializeTeams()
+	AddCallback_GameStateEnter( eGameState.Playing, InitializeTeams )
+	//InitializeTeams()
 }
 
 void function InitializeTeams(){
+
+	wait( 4 )
+
 	array<entity> players = GetPlayerArray()
 
 	foreach( entity player in players ){
 		SetTeam( player, TEAM_MILITIA )
-		RespawnAsPilot( player )
+		//RespawnAsPilot( player )
 	}
 
-	SetTeam( players[ RandomInt( players.len() ) ], TEAM_IMC )
+	SetTeam( players[ RandomIntRange( 0 , players.len() ) ], TEAM_IMC )
 
-	RespawnAsTitan( GetPlayerArrayOfTeam( TEAM_IMC )[0] )
+	entity boss = GetPlayerArrayOfTeam( TEAM_IMC )[0]
 
-	entity titan = GetPlayerArrayOfTeam( TEAM_IMC )[0].GetTitan()
+	boss.SetPlayerGameStat( PGS_ASSAULT_SCORE, 0 )
+	boss.SetPlayerGameStat( PGS_DEATHS, 0 )
 
-	titan.SetHealth(1000000000)
+	KillPlayer( boss, eDamageSourceId.fall )
+	RespawnAsTitan( boss )
+
+
+	entity soul = boss.GetTitanSoul()
+	entity titan = soul.GetTitan()
+
+	titan.SetMaxHealth( 2500 )
+	titan.SetHealth( 25 )
+	
+	soul.SetShieldHealth( soul.GetShieldHealthMax() )
 }
