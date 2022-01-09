@@ -12,8 +12,8 @@ void function Sh_GamemodeJugg_Init()
 void function CreateGamemodeJugg()
 {
     GameMode_Create( GAMEMODE_JUGG )
-    GameMode_SetName( GAMEMODE_JUGG, "#GAMEMODE_JUGG" )
-    GameMode_SetDesc( GAMEMODE_JUGG, "#PL_jugg_desc")
+    GameMode_SetName( GAMEMODE_JUGG, "#PL_juggernaut" )
+    GameMode_SetDesc( GAMEMODE_JUGG, "#PL_juggernaut_desc")
 	GameMode_SetGameModeAnnouncement( GAMEMODE_JUGG, "ffa_modeDesc" ) //temp
     GameMode_SetDefaultTimeLimits( GAMEMODE_JUGG, 20, 0.0 ) // set to 10 minutes later
    	GameMode_AddScoreboardColumnData( GAMEMODE_JUGG, "#SCOREBOARD_SCORE", PGS_ASSAULT_SCORE, 2 )

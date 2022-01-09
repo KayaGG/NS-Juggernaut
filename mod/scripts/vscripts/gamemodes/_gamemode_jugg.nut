@@ -46,20 +46,20 @@ void function InitializeTeams(){
 
 	SetTeam( players[ RandomIntRange( 0 , players.len() ) ], TEAM_IMC )
 
-	entity boss = GetPlayerArrayOfTeam( TEAM_IMC )[0]
+	entity juggernaut = GetPlayerArrayOfTeam( TEAM_IMC )[0]
 
-	boss.SetPlayerGameStat( PGS_ASSAULT_SCORE, 0 )
-	boss.SetPlayerGameStat( PGS_DEATHS, 0 )
+	juggernaut.SetPlayerGameStat( PGS_ASSAULT_SCORE, 0 )
+	juggernaut.SetPlayerGameStat( PGS_DEATHS, 0 )
 
-	KillPlayer( boss, eDamageSourceId.fall )
-	RespawnAsTitan( boss )
+	KillPlayer( juggernaut, eDamageSourceId.fall )
+	RespawnAsTitan( juggernaut )
 
 
-	entity soul = boss.GetTitanSoul()
+	entity soul = juggernaut.GetTitanSoul()
 	entity titan = soul.GetTitan()
 
 	titan.SetMaxHealth( 2500 )
 	titan.SetHealth( 25 )
-	
+
 	soul.SetShieldHealth( soul.GetShieldHealthMax() )
 }
